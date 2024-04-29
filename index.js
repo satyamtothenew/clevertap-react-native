@@ -9,7 +9,7 @@ const EventEmitter = NativeModules.CleverTapReactEventEmitter ? new NativeEventE
 * @param {int} libVersion - The updated library version. If current version is 1.1.0 then pass as 10100  
 */
 const libName = 'React-Native';
-const libVersion = 20201;
+const libVersion = 20100; 
 CleverTapReact.setLibrary(libName,libVersion);
 
 function defaultCallback(method, err, res) {
@@ -49,6 +49,7 @@ var CleverTap = {
     CleverTapInAppNotificationDismissed: CleverTapReact.CleverTapInAppNotificationDismissed,
     CleverTapInAppNotificationShowed: CleverTapReact.CleverTapInAppNotificationShowed,
     FCM: CleverTapReact.FCM,
+    XPS: CleverTapReact.XPS,
     BPS: CleverTapReact.BPS,
     HPS: CleverTapReact.HPS,
     CleverTapInboxDidInitialize: CleverTapReact.CleverTapInboxDidInitialize,
@@ -127,11 +128,17 @@ var CleverTap = {
     /**
      * Manually set the push token on the CleverTap user profile
      * @param {string} token - the device token
-     * @param {string} type - for Android only, specifying the type of push service token. Values can be CleverTap.FCM for Firebase or CleverTap.BPS for Baidu or CleverTap.HPS for Huawei,
+     * @param {string} type - for Android only, specifying the type of push service token. Values can be CleverTap.FCM for Firebase or CleverTap.XPS for Xiaomi or CleverTap.BPS for Baidu or CleverTap.HPS for Huawei,
+     * @param {string} region - for xps only ,to specify the region
      */
-    setPushToken: function (token, type) {
-        console.log(`CleverTap RN | setPushToken | received : token: '${token}' | type:'${type}' `)
-        CleverTapReact.setPushTokenAsString(token, type);
+    setPushToken: function (token, type, region = "") {
+        console.log(`CleverTap RN | setPushToken | received : token: '${token}' | type:'${type}' | region:'${region}' `)
+        if (type === CleverTap.XPS) {
+            CleverTapReact.setPushTokenAsStringWithRegion(token, type, region);
+        }
+        else {
+            CleverTapReact.setPushTokenAsString(token, type);
+        }
     },
 
     /**

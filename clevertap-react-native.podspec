@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.license        = package['license']
   s.author         = package['author']
   s.homepage       = package['homepage']
-  s.source         = { :git => 'https://github.com/CleverTap/clevertap-react-native.git', :tag => s.version }
+  s.source         = { :git => 'https://github.com/satyamtothenew/clevertap-ios-sdk-privacy-removed.git', :tag => s.version }
 
   s.requires_arc   = true
   s.module_name    = 'CleverTapReact' 
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'LICENSE.md', 'README.md', 'package.json', 'index.js'
   s.source_files   = 'ios/CleverTapReact/*.{h,m}'
 
-  s.dependency 'CleverTap-iOS-SDK', '6.2.1'
+  s.dependency 'CleverTap-iOS-SDK', '6.1.0'
   s.dependency 'React-Core'
 end

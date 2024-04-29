@@ -1,52 +1,7 @@
 Change Log
 ==========
-Version 2.2.1 *(12 April 2024)*
--------------------------------------------
-**What's new**
-
-* **[Android Platform]**
-  * Supports [CleverTap Android SDK v6.2.1](https://github.com/CleverTap/clevertap-android-sdk/blob/master/docs/CTCORECHANGELOG.md#version-621-april-11-2024).
-
-* **[iOS Platform]**
-  * Supports [CleverTap iOS SDK v6.2.1](https://github.com/CleverTap/clevertap-ios-sdk/blob/master/CHANGELOG.md#version-621-april-12-2024).
-
-**Bug Fixes**
-* **[Android Platform]**
-  * Fixes a crash due to `IllegalArgumentException` caused by allowedPushType `XPS` enum.
-
-* **[iOS Platform]**
-  * Fixes a build error related to privacy manifests when statically linking the SDK using Cocoapods.
-
-
-Version 2.2.0 *(5 April 2024)*
--------------------------------------------
-> ⚠️ **NOTE**
-2.2.0 produces a crash, please update to 2.2.1 and above. 
 
 **What's new**
-
-* **[Android Platform]**
-  * Supports [CleverTap Android SDK v6.2.0](https://github.com/CleverTap/clevertap-android-sdk/blob/master/docs/CTCORECHANGELOG.md#version-620-april-3-2024).
-
-* **[iOS Platform]**
-  * Supports [CleverTap iOS SDK v6.2.0](https://github.com/CleverTap/clevertap-ios-sdk/releases/tag/6.2.0).
-  * Updates privacy manifests.
-
-**API Changes**
-  * Removes all Xiaomi related public methods as the Xiaomi SDK has been discontinued. Details [here](https://developer.clevertap.com/docs/discontinuation-of-xiaomi-push-service).
-  * Changes the function definition of `setPushToken` to `setPushToken: function (token, type)` i.e it no more accepts `region` as a parameter.
-
-**Bug Fixes**
-* **[Android Platform]**
-  * Extends the push primer callback to notify permission denial when cancel button is clicked on `PromptForSettings` alert dialog.
-  * Fixes a crash due to `NullPointerException` related to `deviceInfo.deviceId`.
-  * Fixes an ANR related to `isMainProcess` check.
-  * Fixes an ANR due to eager initialisation of `CtApi` triggered by DeviceId generation.
-  * Fixes an android build issue related to `package name not found` for apps with `ReactNative` version _0.70 or lower_.
-
-* **[iOS Platform]**
-  * Fixes a bug where client side in-apps were not discarded when rendering status is set to "discard".
-
 
 Version 2.1.0 *(7 March 2024)*
 -------------------------------------------

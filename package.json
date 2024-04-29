@@ -1,6 +1,6 @@
 {
   "name": "clevertap-react-native",
-  "version": "2.2.1",
+  "version": "2.1.0",
   "description": "CleverTap React Native SDK.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CleverTap/clevertap-react-native.git"
+    "url": "git+https://github.com/satyamtothenew/clevertap-ios-sdk-privacy-removed.git"
   },
   "author": "CleverTap",
   "license": "MIT",
